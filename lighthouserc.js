@@ -2,8 +2,7 @@ module.exports = {
     ci: {
       collect: {
         url:[
-          "https://localhost:7071",
-          "http://localhost:5240"
+          "https://localhost",
         ],
         startServerCommand: "dotnet run",
         startServerReadyPattern: "Application started",
