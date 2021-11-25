@@ -5,7 +5,17 @@ jobs:
     name: Lighthouse CI
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 5.0.x
+      - name: Restore dependencies
+        run: dotnet restore
+      - name: Build
+        run: dotnet build --no-restore
+      - name: Test
+        run: dotnet test --no-build --verbosity normal
       - name: Use Node.js 14.x
         uses: actions/setup-node@v1
         with:
@@ -19,3 +29,4 @@ jobs:
           lhci autorun
         env:
           LHCI_TOKEN: ${{ secrets.LHCI_TOKEN }}
+
