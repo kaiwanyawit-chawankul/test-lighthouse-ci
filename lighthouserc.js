@@ -7,7 +7,7 @@ module.exports = {
           "https://localhost:PORT/fetchdata"
         ],
         //staticDistDir: "./publish",
-        startServerCommand: "dotnet run --project src/test-lighthouse-ci.csproj --urls https://localhost:5100  --no-build --verbosity normal",
+        startServerCommand: "dotnet run --project src/test-lighthouse-ci.csproj --no-build --verbosity normal",
         numberOfRuns: 1,
         startServerReadyTimeout: 90000,
       },
