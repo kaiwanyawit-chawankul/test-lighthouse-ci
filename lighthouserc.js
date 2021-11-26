@@ -2,9 +2,7 @@ module.exports = {
     ci: {
       collect: {
         url:[
-          "https://localhost:PORT/",
-          "https://localhost:PORT/counter",
-          "https://localhost:PORT/fetchdata"
+          "https://localhost:5000/",
         ],
         //staticDistDir: "./publish",
         startServerCommand: "dotnet run --project src/test-lighthouse-ci.csproj --no-build --verbosity normal",
