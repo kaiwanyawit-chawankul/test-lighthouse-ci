@@ -18,6 +18,8 @@ jobs:
         run: dotnet test --no-build --verbosity normal
       - name: Publish
         run: dotnet publish -o publish --no-build --verbosity normal
+      - name: Run
+        run: dotnet run --project src/test-lighthouse-ci.csproj --urls https://localhost:5100 --no-build --verbosity normal
       - name: Use Node.js 14.x
         uses: actions/setup-node@v1
         with:
