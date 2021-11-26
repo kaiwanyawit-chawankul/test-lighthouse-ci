@@ -16,6 +16,8 @@ jobs:
         run: dotnet build --no-restore
       - name: Test
         run: dotnet test --no-build --verbosity normal
+      - name: Publish
+        run: dotnet publish -o publish --no-build --verbosity normal
       - name: Use Node.js 14.x
         uses: actions/setup-node@v1
         with:

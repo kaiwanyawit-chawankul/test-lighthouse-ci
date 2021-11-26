@@ -2,12 +2,14 @@ module.exports = {
     ci: {
       collect: {
         url:[
-          "https://localhost:7071",
-          "http://localhost:5240"
+          "https://localhost:5100/",
+          "https://localhost:5100/counter",
+          "https://localhost:5100/fetchdata"
         ],
-        startServerCommand: "dotnet run",
-        startServerReadyPattern: "Application started",
-        numberOfRuns: 1
+        //staticDistDir: "./publish",
+        startServerCommand: "dotnet run --project src/test-lighthouse-ci.csproj --urls https://localhost:5100",
+        numberOfRuns: 1,
+        startServerReadyTimeout: 90000,
       },
       assert: {
         preset: "lighthouse:recommended",
