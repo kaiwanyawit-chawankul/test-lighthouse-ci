@@ -2,11 +2,12 @@ module.exports = {
     ci: {
       collect: {
         url:[
-          "https://localhost:7242/",
+          "http://127.0.0.1:4000",
         ],
         //staticDistDir: "./publish",
-        startServerCommand: "dotnet run --project src/test-lighthouse-ci.csproj --urls:https://localhost:5000 --no-build --verbosity normal",
+        startServerCommand: "http-server ./publish -p 4000 -g",
         numberOfRuns: 1,
+        startServerReadyPattern: "Available on",
         startServerReadyTimeout: 90000,
       },
       assert: {
