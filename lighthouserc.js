@@ -2,13 +2,8 @@ module.exports = {
     ci: {
       collect: {
         url:[
-          "http://127.0.0.1:4000",
+          "http://127.0.0.1:8080",
         ],
-        //staticDistDir: "./publish",
-        startServerCommand: "http-server ./publish/wwwroot -p 4000 -g",
-        numberOfRuns: 1,
-        startServerReadyPattern: "Available on",
-        startServerReadyTimeout: 90000,
       },
       assert: {
         preset: "lighthouse:recommended",

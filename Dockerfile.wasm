@@ -1,0 +1,19 @@
+FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
+WORKDIR /src
+COPY . . 
+RUN dotnet publish -c Release -o output
+
+FROM nginx:stable-alpine
+WORKDIR /usr/share/nginx/html
+COPY --from=build /src/output/wwwroot .
+
+#FROM node:lts-buster
+##RUN apk add –no-cache bash && \
+##    apk add –update nodejs npm && \ 
+##    apk add –no-cache chromium
+
+#RUN npm install -g lighthouse
+#RUN npm install -g @lhci/cli@0.7.x
+
+FROM edicom/lighthouse:latest
+COPY --from=build /src/local.js .
