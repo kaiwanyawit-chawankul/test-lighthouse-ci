@@ -2,9 +2,9 @@ module.exports = {
     ci: {
       collect: {
         url:[
-          "http://127.0.0.1:7242",
+          "http://127.0.0.1:44379",
         ],
-        startServerCommand: "dotnet run --project src/test-lighthouse-ci.csproj --urls https://localhost:7242",
+        startServerCommand: "dotnet run --project src/test-lighthouse-ci.csproj --urls https://localhost:44379",
         numberOfRuns: 1,
         startServerReadyTimeout: 90000,
       },
