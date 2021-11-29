@@ -2,7 +2,7 @@ FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 COPY . . 
 RUN dotnet publish -c Release -o output
-
+#RUN dotnet run --project src/test-lighthouse-ci.csproj --urls https://localhost:8443
 FROM nginx:stable-alpine
 WORKDIR /usr/share/nginx/html
 COPY --from=build /src/output/wwwroot .
@@ -15,5 +15,5 @@ COPY --from=build /src/output/wwwroot .
 #RUN npm install -g lighthouse
 #RUN npm install -g @lhci/cli@0.7.x
 
-FROM edicom/lighthouse:latest
-COPY --from=build /src/local.js .
+#FROM edicom/lighthouse:latest
+#COPY --from=build /src/local.js .
