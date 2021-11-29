@@ -7,3 +7,5 @@ jobs:
       - uses: actions/checkout@v2
       - name: Build the stack
         run: docker-compose up --abort-on-container-exit --exit-code-from lhci
+        env:
+          LHCI_TOKEN: ${{ secrets.LHCI_TOKEN }}
