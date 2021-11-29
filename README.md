@@ -38,3 +38,11 @@ docker run --network container:webapp-frontend edicom/lighthouse:latest autorun 
 
 
 docker run --network container:webapp-frontend edicom/lighthouse:latest lhci collect --url=https://localhost:8080 -n=1 --settings.chromeFlags="--no-sandbox --disable-dev-shm-usage"
+
+
+docker-compose up --abort-on-container-exit --exit-code-from lhci
+
+
+
+
+

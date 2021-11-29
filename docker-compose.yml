@@ -15,6 +15,6 @@ services:
     - web
     cap_add:
       - SYS_ADMIN
-    command: lhci autorun --collect.url=http://web:80 --collect.numberOfRuns=1 --collect.settings.chromeFlags="--no-sandbox –-ignore-certificate-errors" –upload.target="lhci" –upload.token="LHCI_TOKEN" –upload.serverBaseUrl="https://peaceful-earth-32428.herokuapp.com/"
+    command: lhci autorun --collect.url=http://web:80 --collect.numberOfRuns=1 --collect.settings.chromeFlags="--no-sandbox –-ignore-certificate-errors" –-upload.target="lhci" –-upload.token="LHCI_TOKEN" –-upload.serverBaseUrl="https://peaceful-earth-32428.herokuapp.com/"
     depends_on:
       - web
